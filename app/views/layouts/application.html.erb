@@ -1,14 +1,25 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <title>Colib</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
+<html class="controller_<%= controller.controller_name %> action_<%= controller.action_name %>">
+  <head>
+    <title>The health check for your product team - Colib</title>
 
-<%= yield %>
-
-</body>
+    <meta name="viewport"           content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    
+    <meta name="twitter:card"       content="summary">
+    <meta name="twitter:site"       content="@getcolib">
+    <meta property="og:url"         content="http://colib.com/">
+    <meta property="og:title"       content="The health check for your product team - Colib">
+    <meta property="og:description" content="An interactive guide to a healthy product development team.">
+    
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <%= favicon_link_tag %>
+    <%= favicon_link_tag 'favicon.png', rel: 'apple-touch-icon', type: 'image/png' %>
+    <%= csrf_meta_tags %>
+  </head>
+  <body>
+    <%= render partial: 'layouts/google_analytics' if ENV['GOOGLE_ANALYTICS_UA'] %>
+    <%= yield %>
+    <%= render partial: 'layouts/intercom' if ENV['INTERCOM_APP_ID'] %>
+  </body>
 </html>
