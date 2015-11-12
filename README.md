@@ -1,7 +1,7 @@
 README
 ======
 
-This is the website for [Colib.com](http://colib.com), the health check for your product team.
+This is the website for [Colib.com](http://colib.com), the health check for your product development process.
 
 Contact paul@colib.com, follow along at [@GetColib](https://twitter.com/getcolib), and join the [Slack team](http://slack.colib.com/).
 
